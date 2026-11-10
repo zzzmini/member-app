@@ -50,7 +50,7 @@ public class ArrayMemberRepository implements MemberRepository{
     }
 
     @Override
-    public boolean findById(int id) {
+    public Member findById(int id) {
         // 전달받은 id가 members 배열에 있는지 확인
         // 있으면  true, 없으면 false
         // 1. 해당 id가 있는지 있으면 해당 id를 리턴하는
@@ -58,9 +58,9 @@ public class ArrayMemberRepository implements MemberRepository{
         int findId = findByIndex(id);
         // findId = -1 : false 그 외 true
         if(findId == -1) {
-            return false;
+            return null;
         }
-        return true;
+        return members[findId];
     }
 
     // 내가 만드는 메서드
