@@ -1,4 +1,5 @@
 import console.MemberConsole;
+import repository.ArrayListMemberRepository;
 import repository.ArrayMemberRepository;
 import repository.MemberRepository;
 import service.MemberService;
@@ -6,7 +7,8 @@ import service.MemberService;
 public class Main {
     static void main(String[] args) {
         // 리포부모 만들고
-        MemberRepository repository = new ArrayMemberRepository();
+        //MemberRepository repository = new ArrayMemberRepository();
+        MemberRepository repository = new ArrayListMemberRepository();
         // 리포를 서비스에 넣고
         MemberService service = new MemberService(repository);
         // 서비스를 콘솔에 넣고
